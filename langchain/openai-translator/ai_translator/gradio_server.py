@@ -7,6 +7,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from utils import ArgumentParser, LOG
 from translator import PDFTranslator, TranslationConfig
 
+os.environ['OPENAI_API_KEY'] = 'sk-9p2vA8PvWogRQ9p500783cD35b9a4815A4Af10661d69B4F6'
+os.environ['OPENAI_BASE_URL'] = 'https://api.bltcy.ai/v1'
 
 def translation(input_file, source_language, target_language):
     LOG.debug(f"[翻译任务]\n源文件: {input_file.name}\n源语言: {source_language}\n目标语言: {target_language}")

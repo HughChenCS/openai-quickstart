@@ -228,10 +228,12 @@ Django Peng - pjt73651@email.com
 
 
 
+## Day2
+version1
+![img.png](img.png)
+![img_1.png](img_1.png)
 
-
-
-
+version2
 
 
 

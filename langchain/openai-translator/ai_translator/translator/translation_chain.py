@@ -10,7 +10,7 @@ class TranslationChain:
         # 翻译任务指令始终由 System 角色承担
         template = (
             """You are a translation expert, proficient in various languages. \n
-            Translates {source_language} to {target_language}."""
+            Translates everything separately from {source_language} to {target_language}. And convert it into a suitable markdown format  \n"""
         )
         system_message_prompt = SystemMessagePromptTemplate.from_template(template)
 
@@ -24,7 +24,9 @@ class TranslationChain:
         )
 
         # 为了翻译结果的稳定性，将 temperature 设置为 0
-        chat = ChatOpenAI(model_name=model_name, temperature=0, verbose=verbose)
+        chat = ChatOpenAI(model_name=model_name, temperature=0, verbose=verbose,
+                          api_key='sk-9p2vA8PvWogRQ9p500783cD35b9a4815A4Af10661d69B4F6',
+                          base_url='https://api.bltcy.ai/v1')
 
         self.chain = LLMChain(llm=chat, prompt=chat_prompt_template, verbose=verbose)
 
